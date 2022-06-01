@@ -1,11 +1,10 @@
-# TALKING JAVA
+# ARDU PLANT
 
-Esta es una pequenia aplicacion solo por consola para realizar pruebas tanto de Leer como Esuchar con Talking Java.
+8 Se busca tener que dar mantenimiento a las plantas del jardin para poder mantener en buen estado la tierra.
 
-## Libreria.
+## Objetivo.
 
-La misma libreria lo dejare comprimido para que lo usen.
+* Se busca proveer de suficiente agua a las plantas para garantizar  un buen crecimiento de las mismas
 
-## IMPORTANTE
-1. Para leer el diccionario deben darle el path en el archivo de Esucha.java en: FileReader
-2. Solo es permitido usar esta libreria y tiene su alcance para Windows SO.
+## Tecnologia
+* Trabajado sobre la placa arduino UNO en un inicio que esta basado en lenguaje C.
