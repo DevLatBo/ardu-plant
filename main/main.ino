@@ -4,11 +4,18 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include <DHT.h>
  
 // Definir constantes
 #define ANCHO_PANTALLA 128 // ancho pantalla OLED
 #define ALTO_PANTALLA 64 // alto pantalla OLED
- 
+
+// Sensor de Humedad
+#define DHTPIN 2
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
 // Objeto de la clase Adafruit_SSD1306
 Adafruit_SSD1306 display(ANCHO_PANTALLA, ALTO_PANTALLA, &Wire, -1);
  
@@ -66,6 +73,8 @@ void setup() {
   Serial.begin(9600);
   delay(100);
   Serial.println("Iniciando pantalla OLED");
+  dht.begin();
+  
 #endif
  
   // Iniciar pantalla OLED en la dirección 0x3C
@@ -86,12 +95,20 @@ void setup() {
 }
  
 void loop() {
+  delay(1000);
+  float h = dht.readHumidity();
+  String dataH = "";
+  dataH.concat(h);
   display.clearDisplay();
-  display.setTextSize(2);
+  display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
-  display.println("Dato");
+  display.println("Humedad(E):");
+  display.setCursor(0,10);
+  display.println(dataH + "%");
   display.setCursor(0,20);
-  display.println(0.0);
+  display.println("Humedad(I):");
+  display.setCursor(0,30);
+  display.println("0.0%");
   display.display();
 }
