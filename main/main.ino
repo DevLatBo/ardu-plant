@@ -73,10 +73,7 @@ void setup() {
   Serial.begin(9600);
   delay(100);
   Serial.println("Iniciando pantalla OLED");
-  dht.begin();
-  
 #endif
- 
   // Iniciar pantalla OLED en la dirección 0x3C
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
 #ifdef __DEBUG__
@@ -92,6 +89,9 @@ void setup() {
   display.drawBitmap(29, 18, datos_imagen, 69, 46, SSD1306_WHITE);
   display.display();
   delay(3000);
+
+  // Initiate DHT11
+  dht.begin();
 }
  
 void loop() {
