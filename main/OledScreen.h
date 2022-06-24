@@ -1,5 +1,5 @@
-#ifndef OledSensor_h
-#define OledSensor_h
+#ifndef OledScreen_h
+#define OledScreen_h
 
 #include "Arduino.h"
 #include <SPI.h>
@@ -17,11 +17,9 @@ class Oled {
 
   public:
     Oled(int _ancho, int _alto, int _pinReset);
-    void initiateDisplay();
     void validateScreen();
     void clearScreen();
-    void drawImage(unsigned char imageData[]);
-    void sendData();
+    void drawImage();
     void adjustProperties(int textSize);
     void printInformation(String humidity);
     
