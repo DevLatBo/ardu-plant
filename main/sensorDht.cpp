@@ -2,9 +2,6 @@
 
 Dht::Dht(int _pinSensor, uint8_t _sensorType):
   dht(_pinSensor, _sensorType){
-  humidity = 0;
-  pinSensor = _pinSensor;
-  sensorType = _sensorType;
 }
 
 void Dht::initiate(){

@@ -2,11 +2,7 @@
 #include "OledScreen.h"
 
 Oled::Oled(int _ancho, int _alto, int _pinReset):
-  display(_ancho, _alto, &Wire, _pinReset){
-  ancho = _ancho;
-  alto = _alto;
-  pinReset = _pinReset;
-}
+  display(_ancho, _alto, &Wire, _pinReset){}
 
 void Oled::validateScreen() {
   #ifdef __DEBUG__

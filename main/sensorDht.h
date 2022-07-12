@@ -6,11 +6,7 @@
 
 class Dht {
   DHT dht;
-  private:
-    float humidity;
-    int pinSensor;
-    int sensorType;
-
+  
   public:
     Dht(int _pinSensor, uint8_t _sensorType);
     

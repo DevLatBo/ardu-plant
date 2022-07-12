@@ -9,11 +9,6 @@
 
 class Oled {
   Adafruit_SSD1306 display;
-  
-  private:
-    int ancho;
-    int alto;
-    int pinReset;
 
   public:
     Oled(int _ancho, int _alto, int _pinReset);
