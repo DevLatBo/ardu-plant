@@ -8,7 +8,12 @@
 ***
 
 ## Acerca del Proyecto
-En este proyecto, se busca experimentar un dispositivo en e cual pueda mantener la tierra humeda de una planta, esto con el fin de que tengamos hidratada la especie y evitar la sequedad en el suelo.
+
+<img align="right" alt="GIF" width="300px" src="https://media.giphy.com/media/xdkXW7Scx6gus/giphy.gif" />
+
+En este proyecto, se busca experimentar un dispositivo en el cual pueda mantener la tierra humeda para una planta, esto con el fin de que tengamos hidratada la especie y evitar la sequedad en el suelo.
+
+La humedad del suelo es un concepto esencial ya sea en cultivos intensivos, extensivos, huertos ecológicos, las plantas de una casa y todo aquello que tenga que ver con desarrollo vegetal.
 
 **[⬆ Inicio](#contenido)**
 ***
