@@ -1,39 +1,27 @@
+#include "Led.h"
+#include <DHT.h>
 
+#define LED_PIN 13
 
-#include "sensorDht.h"
-#include "OledScreen.h"
- 
-// Definir constantes
-#define ANCHO_PANTALLA 128 // ancho pantalla OLED
-#define ALTO_PANTALLA 64 // alto pantalla OLED
-#define OLED_RESET -1 // pin de reinicio
-
-Oled oled(ANCHO_PANTALLA, ALTO_PANTALLA, OLED_RESET);
-
-// Sensor de Humedad
 #define DHTPIN 2
 #define DHTTYPE DHT11
-Dht Dht(DHTPIN, DHTTYPE);
 
- 
+Led led1(LED_PIN);
+DHT dht(DHTPIN, DHTTYPE);
+
 void setup() {
-  oled.validateScreen();
-  
-  // Clear the buffer.
-  oled.clearScreen();
-  
-  // Draw bitmap on the screen
-  oled.drawImage();
-  
-  // Initiate DHT11
-  Dht.initiate();
+  dht.begin();
+  Serial.begin(9600);
 }
- 
+
 void loop() {
-  delay(1000);
-  float h = Dht.readHumidity();
-  oled.clearScreen();
-  oled.adjustProperties(1);
-  String humidity = Dht.showHumidity(h);
-  oled.printInformation(humidity);
+  led1.on();
+  float temp = dht.readTemperature();
+
+  if(isnan(temp)) {
+    Serial.println("Temp Error Sensor");
+    return;
+  }
+  Serial.println(temp);
+  led1.off();
 }
