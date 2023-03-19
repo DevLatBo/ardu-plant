@@ -1,5 +1,6 @@
 #include "Led.h"
-#include <DHT.h>
+#include "Sensor.h"
+//#include <DHT.h>
 
 #define LED_PIN 13
 
@@ -7,17 +8,18 @@
 #define DHTTYPE DHT11
 
 Led led1(LED_PIN);
-DHT dht(DHTPIN, DHTTYPE);
+//DHT dht(DHTPIN, DHTTYPE);
+Sensor sensor(DHTPIN, DHTTYPE);
 
 void setup() {
-  dht.begin();
+  sensor.init();
   Serial.begin(9600);
 }
 
 void loop() {
   led1.on();
-  float temp = dht.readTemperature();
-
+  float temp = sensor.getTemperature();
+  delay(500);
   if(isnan(temp)) {
     Serial.println("Temp Error Sensor");
     return;
