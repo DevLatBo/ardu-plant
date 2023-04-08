@@ -12,10 +12,8 @@ void Led::init() {
 
 void Led::on() {
     digitalWrite(pin, HIGH);
-    delay(2000);
 }
 
 void Led::off() {
     digitalWrite(pin, LOW);
-    delay(2000);
 }
