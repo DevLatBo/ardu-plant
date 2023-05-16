@@ -4,6 +4,7 @@
 - [Acerca del Proyecto](#acerca-del-proyecto) :information_source:
 - [Objetivo](#objetivo) :seedling:
 - [Tecnologias](#tecnologias) :keyboard:
+- [Componentes](#componentes) :robot:
 
 ***
 
@@ -28,6 +29,14 @@ Si la tierra esta seca o muy poca humedad, entonces gracias al sensor el disposi
 
 ## Tecnologias
 * Arduino (C++).
+
+**[⬆ Inicio](#contenido)**
+***
+
+## Componentes
+Para este proyecto se esta usando los siguientes componentes en el circuito:
+* Pantalla OLED 128x64 Pixeles - 0.96 pulgadas.
+* Sensor de humedad/temperatura DHT11.
 
 **[⬆ Inicio](#contenido)**
 ***
